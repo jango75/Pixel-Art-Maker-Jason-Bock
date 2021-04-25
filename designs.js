@@ -1,10 +1,14 @@
+
 "use strict";
+
+// variables list
 
 const $tableElement = $('#pixelCanvas');
 const $inputHeight = $('#inputHeight');
 const $inputWidth = $('#inputWidth');
 const $colorPicker = $('#colorPicker');
 
+// input grid parameters
 $('#sizePicker').submit( event => {
     event.preventDefault();
 
@@ -17,6 +21,8 @@ $('#sizePicker').submit( event => {
     addCellClickListener();
 });
 
+// create grid from input
+
 function makeGrid(height, width) {
     for(let i = 0; i < height; i++) {
         $tableElement.append('<tr></tr>');
@@ -26,6 +32,7 @@ function makeGrid(height, width) {
         $('tr').append('<td></td>');
     };
 };
+// color cells
 
 function addCellClickListener() {
     $('td').click( event => {
